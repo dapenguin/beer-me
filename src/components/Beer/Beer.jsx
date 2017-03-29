@@ -8,7 +8,7 @@ function Beer(props){
 		<div className="beer">
 			<h3 className="beer-name">{props.beerName}</h3>
 			<img className="beer-image" src={imagePath} alt="" />
-			<p>{props.brewery}</p>
+			<p className="beer-brewery">{props.brewery}</p>
 			<p>{props.beerType}</p>
 			<p>{props.rating}</p>
 			<p>{props.userNotes}</p>

@@ -1,5 +1,7 @@
+@import '../../sass/variables/colours';
+
 .appHeader {
-	background: #0c0c0c;
+	background: $colorBlack;
 }
 
 .appHeader-inner {
@@ -9,7 +11,7 @@
 }
 
 .appHeader-loadBeersButton {
-	background: #0c0c0c;
+	background: $colorBlack;
 	border: 2px solid #fff;
 	border-radius: 15px;
 	color: #fff;

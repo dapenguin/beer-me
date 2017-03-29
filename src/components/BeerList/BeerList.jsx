@@ -21,7 +21,7 @@ function BeerList(props){
 		);
 	};
 
-	if (beers.length === 0){
+	if (Object.keys(beers).length === 0){
 		beerListContent = <p className="beerList-emptyMsg">You do not have any beers in your list.</p>
 	} else {
 		beerListContent = (
@@ -32,6 +32,7 @@ function BeerList(props){
 	}
 	return (
 		<div className="beerList">
+			<h2>Your beers</h2>
 			{beerListContent}
 		</div>
 	);

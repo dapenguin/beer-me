@@ -1,5 +1,7 @@
+@import '../../sass/mixins/clearfix';
+
 .beer {
-	overflow: hidden;
+	@include clearfix;
 }
 
 .beer-name {

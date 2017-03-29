@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "concurrently": "^3.4.0",
     "enzyme": "^2.8.0",
     "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
     "react-addons-test-utils": "^15.4.2",
     "react-scripts": "0.9.5"
   },
@@ -14,8 +14,11 @@
     "react-dom": "^15.4.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "run-p watch-css start-js",
+    "start-js": "react-scripts start",
+    "build": "npm run build-css && react-scripts build",
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "node-sass src/ -o src/ -w -r",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
