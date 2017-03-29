@@ -35,7 +35,7 @@ describe('<Beer> component', () => {
 	});
 
 	it('should display an image of the beer', () => {
-		expect(beerComponent.find(`img[src="${beerData.image}"]`).length).toEqual(1);
+		expect(beerComponent.find(`img[src="/img/${beerData.image}"]`).length).toEqual(1);
 	});
 
 	it('should display the type of beer. (i.e. Ale, Wheat beer, Bitter, Stout, etc.)', () => {

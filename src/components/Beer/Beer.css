@@ -1,0 +1,13 @@
+.beer {
+	overflow: hidden;
+}
+
+.beer-name {
+	font-weight: bold;
+}
+
+.beer-image {
+	border: 1px solid #666;
+	box-shadow: 0 0 5px #ccc;
+	padding: 10px;
+}

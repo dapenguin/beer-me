@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import Beer from '../Beer/Beer';
+import './BeerList.css';
 
 function BeerList(props){
 	let beerListContent = '',
