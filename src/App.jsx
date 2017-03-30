@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import './App.css';
 import AppHeader from './components/AppHeader/AppHeader';
-import BeerList from './components/BeerList/BeerList';
+import Home from './views/Home/Home';
+import MyBeers from './views/MyBeers/MyBeers';
 
 import sampleBeers from './sample-data/beers.data.js';
 
@@ -25,7 +28,16 @@ class App extends Component {
 			<div className="app">
 				<AppHeader loadBeers={this.loadSampleBeers} />
 				<div className="app-body">
-					<BeerList beers={this.state.beers} />
+					<BrowserRouter>
+						<Switch>
+							<Route exact path="/">
+								<Home beers={this.state.beers} />
+							</Route>
+							<Route exact path="/my-beers">
+								 <MyBeers beers={this.state.beers} />
+							</Route>
+						</Switch>
+					</BrowserRouter>
 				</div>
 			</div>
 		);
