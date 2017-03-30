@@ -21,7 +21,7 @@ function BeerList(props){
 		);
 	};
 
-	if (Object.keys(beers).length === 0){
+	if (typeof beers === 'undefined' || Object.keys(beers).length === 0){
 		beerListContent = <p className="beerList-emptyMsg">You do not have any beers in your list.</p>
 	} else {
 		beerListContent = (

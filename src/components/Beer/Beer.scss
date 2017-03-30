@@ -1,15 +1,39 @@
 @import '../../sass/mixins/clearfix';
 
+$beerContainerPadding: 20px;
+$beerImagePadding: 10px;
+$beerImageHeight: 150px + ($beerImagePadding * 2);
+$beerImageWidth: 150px + ($beerImagePadding * 2);
+
 .beer {
 	@include clearfix;
+
+	border: 1px solid #ccc;
+	margin: 0 0 20px;
+	min-height: $beerImageHeight;
+	padding: $beerContainerPadding $beerContainerPadding $beerContainerPadding ($beerImageWidth + ($beerContainerPadding * 2));
+	position: relative;
 }
 
 .beer-name {
 	font-weight: bold;
+	margin: 0 0 1em;
 }
 
 .beer-image {
-	border: 1px solid #666;
 	box-shadow: 0 0 5px #ccc;
-	padding: 10px;
+	left: $beerContainerPadding;
+	padding: $beerImagePadding;
+	position: absolute;
+	top: $beerContainerPadding;
+}
+
+.beer-breweryLabel,
+.beer-typeLabel,
+.beer-ratingLabel {
+	font-weight: bold;
+}
+
+.beer-userNotes {
+	margin: 0;
 }
