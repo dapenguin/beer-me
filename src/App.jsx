@@ -5,6 +5,7 @@ import './App.css';
 import AppHeader from './components/AppHeader/AppHeader';
 import Home from './views/Home/Home';
 import MyBeers from './views/MyBeers/MyBeers';
+import AddBeer from './views/AddBeer/AddBeer';
 
 import sampleBeers from './sample-data/beers.data.js';
 
@@ -34,7 +35,10 @@ class App extends Component {
 								<Home beers={this.state.beers} />
 							</Route>
 							<Route exact path="/my-beers">
-								 <MyBeers beers={this.state.beers} />
+								<MyBeers beers={this.state.beers} />
+							</Route>
+							<Route exact path="/add-beer">
+								<AddBeer />
 							</Route>
 						</Switch>
 					</BrowserRouter>

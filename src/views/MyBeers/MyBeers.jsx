@@ -13,6 +13,7 @@ class MyBeers extends Component {
 			<div>
 				<h1>My beers</h1>
 				<Link to="/">Home</Link>
+				<Link to="/add-beer">Add a beer</Link>
 				<BeerList beers={this.props.beers}/>
 			</div>
 		)
