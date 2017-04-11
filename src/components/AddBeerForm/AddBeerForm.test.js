@@ -9,9 +9,8 @@ describe('<AddBeerForm> component', () => {
 		let addBeerFormComponent = mount(<AddBeerForm />).get(0);
 
 		it('should be no longer than 100 characters', () => {
-			const beerName = 'a'.repeat(101),
-				beerNameState = {
-					value: beerName,
+			const beerNameState = {
+					value: 'a'.repeat(101),
 					errorMessage: ''
 				},
 				beerNameField = addBeerFormComponent.beerNameField.textInput;
@@ -23,6 +22,15 @@ describe('<AddBeerForm> component', () => {
 			Simulate.blur(beerNameField);
 
 			expect(addBeerFormComponent.state.beerName.errorMessage).toBe('The beer name cannot be more than 100 characters long');
+
+			// Now change the state so that the beer name is exactly the max length of characters.
+			beerNameState.value = 'b'.repeat(100)
+			addBeerFormComponent.setState({beerName: beerNameState});
+
+			// Simulate leaving the field to trigger the validation for the field
+			Simulate.blur(beerNameField);
+
+			expect(addBeerFormComponent.state.beerName.errorMessage).toBe('');
 		});
 
 		it('should not be empty', () => {
@@ -42,7 +50,7 @@ describe('<AddBeerForm> component', () => {
 		});
 
 		xit('should encode any HTML entered by the user', () => {
-
+			// This probably needs to be done when we are saving.
 		});
 	});
 });
