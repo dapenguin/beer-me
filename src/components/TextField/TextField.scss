@@ -2,6 +2,7 @@
 
 .textField {
 	margin: 0 0 1em;
+	max-width: 300px;
 
 	label {
 		display: block;
@@ -10,8 +11,24 @@
 
 	input {
 		border: 1px solid $colorFieldBorder;
-		border-radius: 10px;
+		border-radius: 5px;
+		box-sizing: border-box;
 		font-size: 1em;
 		padding: .5em 1em;
+		transition: border-color .5s;
+		width: 100%;
+	}
+}
+
+// Components
+.textField-errorMessage {
+	color: $colorFieldErrorText;
+}
+
+// States
+.textField-hasError {
+	input {
+		border: 3px solid $colorFieldBorderError;
+		padding: calc(.5em - 2px) calc(1em - 2px);
 	}
 }
